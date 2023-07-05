@@ -7,6 +7,11 @@ terraform {
   }
 }
 
+# Appel du module instances
+module "instance" {
+  source = "./instance"
+
+}
 # Création des volumes et ajout aux instances
 resource "openstack_blockstorage_volume_v3" "volume1" {
   name        = "volume1"

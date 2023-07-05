@@ -6,6 +6,12 @@ terraform {
     }
   }
 }
+
+# Appel du module réseau
+module "network" {
+  source = "../network"
+}
+
 # Création de 2 instances avec image ubuntu
 resource "openstack_compute_instance_v2" "instance1" {
   name            = "instance1"
