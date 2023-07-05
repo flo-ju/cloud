@@ -14,10 +14,6 @@ module "network" {
 output "network_id" {
   value = module.network.network_id
 }
-
-output "subnet_id" {
-  value = module.network.subnet_id
-}
 # Création de 2 instances avec image ubuntu
 resource "openstack_compute_instance_v2" "instance1" {
   name            = "instance1"
@@ -26,7 +22,7 @@ resource "openstack_compute_instance_v2" "instance1" {
   security_groups = ["default"]
   
   network {
-    value = module.network.network_id
+    port = module.network.network_id
   }
 }
 
@@ -37,6 +33,6 @@ resource "openstack_compute_instance_v2" "instance2" {
   security_groups = ["default"]
 
   network {
-  	value = module.network.network_id
+  	port = module.network.network_id
   }
 }
