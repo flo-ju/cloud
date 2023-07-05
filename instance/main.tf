@@ -26,7 +26,7 @@ resource "openstack_compute_instance_v2" "instance1" {
   security_groups = ["default"]
   
   network {
-    port = module.network.network_id
+    name = "private_network" 
   }
 }
 
@@ -37,6 +37,5 @@ resource "openstack_compute_instance_v2" "instance2" {
   security_groups = ["default"]
 
   network {
-    port = module.network.network_id
-  }
+  	name = "private_network"  }
 }
