@@ -20,13 +20,13 @@ module "network" {
 }
 
 # Appel du module instances
-module "instances" {
+module "instance" {
   source = "./instance"
 
 }
 
 # Appel du module volumes
-module "volumes" {
+module "volume" {
   source = "./volume"
 
 }
