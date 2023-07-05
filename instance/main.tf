@@ -23,7 +23,6 @@ resource "openstack_compute_instance_v2" "instance1" {
   name            = "instance1"
   flavor_name     = "m1.small"
   image_name      = "ubuntu"
-  key_pair        = "<YOUR_KEYPAIR_NAME>"
   security_groups = ["default"]
   
   network {
@@ -35,7 +34,6 @@ resource "openstack_compute_instance_v2" "instance2" {
   name            = "instance2"
   flavor_name     = "m1.small"
   image_name      = "ubuntu"
-  key_pair        = "<YOUR_KEYPAIR_NAME>"
   security_groups = ["default"]
 
   network {
