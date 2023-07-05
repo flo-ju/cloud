@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    openstack = {
+      source  = "terraform-provider-openstack/openstack"
+      version = "2023.1"
+    }
+  }
+}
 # Création réseau sous réseau routeur
 resource "openstack_networking_network_v2" "private_network" {
   name        = "private_network"
