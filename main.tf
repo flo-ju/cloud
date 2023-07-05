@@ -1,24 +1,25 @@
-# Define required providers
-terraform {
-required_version = ">= 0.14.0"
-  required_providers {
-    openstack = {
-      source  = "terraform-provider-openstack/openstack"
-      version = "~> 1.51.1"
-    }
-  }
-}
-
-# Configure the OpenStack Provider
+# Connexion au fournisseur OpenStack
 provider "openstack" {
-  user_name   = "admin"
-  tenant_name = "admin"
-  password    = "admin"
-  auth_url    = "http://myauthurl:5000/v2.0"
-  region      = "RegionOne"
+  auth_url    = "https://<YOUR_AUTH_URL>"
+  username    = "<YOUR_USERNAME>"
+  password    = "<YOUR_PASSWORD>"
+  tenant_name = "<YOUR_TENANT_NAME>"
 }
 
-# Create a web server
-resource "openstack_compute_instance_v2" "test-server" {
-  # ...
+# Appel du module réseau
+module "network" {
+  source = "./network"
 }
+
+# Appel du module instances
+module "instances" {
+  source = "./instance"
+
+}
+
+# Appel du module volumes
+module "volumes" {
+  source = "./volume"
+
+}
+
