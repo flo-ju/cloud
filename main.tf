@@ -1,9 +1,9 @@
 # Connexion au fournisseur OpenStack
 provider "openstack" {
-  auth_url    = "https://<YOUR_AUTH_URL>"
-  username    = "<YOUR_USERNAME>"
-  password    = "<YOUR_PASSWORD>"
-  tenant_name = "<YOUR_TENANT_NAME>"
+  auth_url    = "http://192.168.246.14:8080"
+  username    = "admin"
+  password    = "secret"
+  tenant_name = "admin"
 }
 
 # Appel du module réseau
