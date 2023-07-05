@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    openstack = {
+      source  = "terraform-provider-openstack/openstack"
+      version = "~> 1.51.1"
+    }
+  }
+}
 # Création de 2 instances avec image ubuntu
 resource "openstack_compute_instance_v2" "instance1" {
   name            = "instance1"

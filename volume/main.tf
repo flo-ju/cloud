@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    openstack = {
+      source  = "terraform-provider-openstack/openstack"
+      version = "~> 1.51.1"
+    }
+  }
+}
+
 # Création des volumes et ajout aux instances
 resource "openstack_blockstorage_volume_v3" "volume1" {
   name        = "volume1"
