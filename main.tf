@@ -9,7 +9,7 @@ terraform {
 # Connexion au fournisseur OpenStack
 provider "openstack" {
   auth_url    = "http://192.168.246.14:8080"
-  username    = "admin"
+  user_name    = "admin"
   password    = "secret"
   tenant_name = "admin"
 }
