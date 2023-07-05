@@ -14,20 +14,9 @@ provider "openstack" {
   tenant_name = "admin"
 }
 
-# Appel du module réseau
-module "network" {
-  source = "./network"
-}
-
 # Appel du module instances
 module "instance" {
   source = "./instance"
-
-}
-
-# Appel du module volumes
-module "volume" {
-  source = "./volume"
 
 }
 

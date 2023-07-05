@@ -9,7 +9,7 @@ terraform {
 
 # Appel du module instances
 module "instance" {
-  source = "./instance"
+  source = "../instance"
 
 }
 # Création des volumes et ajout aux instances
