@@ -20,5 +20,6 @@ module "network" {
 module "instance" {
   source = "./instance"
   network_id = module.network.network_id
+  subnet_id = module.network.subnet_id
 }
 

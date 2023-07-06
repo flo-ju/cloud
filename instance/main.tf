@@ -20,6 +20,7 @@ resource "openstack_compute_instance_v2" "instance1" {
   
   network {
     uuid = var.network_id
+    subnet = var.subnet_id
   }
 }
 
@@ -31,5 +32,6 @@ resource "openstack_compute_instance_v2" "instance2" {
 
   network {
   	uuid = var.network_id
+	subnet = var.subnet_id
   }
 }
