@@ -13,11 +13,15 @@ provider "openstack" {
   password    = "secret"
   tenant_name = "admin"
 }
+module "network" {
+  source = "./network"
+  id_network = var.id_network
+}
 
 # Appel du module instances
 module "instance" {
   source = "./instance"
-
+  id_network = module.network.network_id
 }
 
 output "instance_id" {
