@@ -18,13 +18,13 @@ output "instance_id" {
 # Création des volumes et ajout aux instances
 resource "openstack_blockstorage_volume_v3" "volume1" {
   name        = "volume1"
-  size        = 20
+  size        = 10
   description = "Volume 1 description"
 }
 
 resource "openstack_blockstorage_volume_v3" "volume2" {
   name        = "volume2"
-  size        = 20
+  size        = 10
   description = "Volume 2 description"
 }
 
