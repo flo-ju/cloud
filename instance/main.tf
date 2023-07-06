@@ -19,7 +19,7 @@ resource "openstack_compute_instance_v2" "instance1" {
   security_groups = ["default"]
   
   network {
-    port = var.network_id
+    uuid = var.network_id
   }
 }
 
@@ -30,6 +30,6 @@ resource "openstack_compute_instance_v2" "instance2" {
   security_groups = ["default"]
 
   network {
-  	port = var.network_id
+  	uuid = var.network_id
   }
 }
